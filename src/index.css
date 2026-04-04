@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .tech-pill {
+    @apply badge badge-outline badge-primary;
+  }
+}

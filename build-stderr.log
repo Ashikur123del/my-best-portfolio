@@ -1,0 +1,21 @@
+[31mx[39m Build failed in 1.84s
+[31merror during build:
+[31msrc/components/About.jsx (5:9): "VscApi" is not exported by "node_modules/react-icons/vsc/index.mjs", imported by "src/components/About.jsx".[31m
+file: [36mC:/Pt/my-portfolio/src/components/About.jsx:5:9[31m
+[33m
+3: import { FaReact, FaAngular, FaJs, FaGithub, FaBootstrap } from 'react-icons/fa';
+4: import { SiTailwindcss, SiSass } from 'react-icons/si';
+5: import { VscApi } from 'react-icons/vsc';
+            ^
+6: import ashikImg from '../assets/image/ashik.jpg';
+[31m
+    at getRollupError (file:///C:/Pt/my-portfolio/node_modules/rollup/dist/es/shared/parseAst.js:406:41)
+    at error (file:///C:/Pt/my-portfolio/node_modules/rollup/dist/es/shared/parseAst.js:402:42)
+    at Module.error (file:///C:/Pt/my-portfolio/node_modules/rollup/dist/es/shared/node-entry.js:17380:16)
+    at Module.traceVariable (file:///C:/Pt/my-portfolio/node_modules/rollup/dist/es/shared/node-entry.js:17813:29)
+    at ModuleScope.findVariable (file:///C:/Pt/my-portfolio/node_modules/rollup/dist/es/shared/node-entry.js:15403:39)
+    at ReturnValueScope.findVariable (file:///C:/Pt/my-portfolio/node_modules/rollup/dist/es/shared/node-entry.js:5676:38)
+    at FunctionBodyScope.findVariable (file:///C:/Pt/my-portfolio/node_modules/rollup/dist/es/shared/node-entry.js:5676:38)
+    at Identifier.bind (file:///C:/Pt/my-portfolio/node_modules/rollup/dist/es/shared/node-entry.js:5450:40)
+    at CallExpression.bind (file:///C:/Pt/my-portfolio/node_modules/rollup/dist/es/shared/node-entry.js:2828:28)
+    at CallExpression.bind (file:///C:/Pt/my-portfolio/node_modules/rollup/dist/es/shared/node-entry.js:12512:15)[39m
