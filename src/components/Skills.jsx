@@ -1,8 +1,7 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { FaCode, FaGem, FaWrench } from 'react-icons/fa';
 
-const SkillBar = ({ name, percentage, color }) => (
+const SkillBar = ({ name, percentage, colorClass }) => (
     <div className="mb-6">
         <div className="flex justify-between mb-2">
             <span className="font-bold text-base-content/80">{name}</span>
@@ -14,7 +13,7 @@ const SkillBar = ({ name, percentage, color }) => (
                 whileInView={{ width: `${percentage}%` }}
                 viewport={{ once: true }}
                 transition={{ duration: 1.5, ease: "easeOut" }}
-                className={`h-full rounded-full bg-${color}`}
+                className={`h-full rounded-full ${colorClass}`}
             />
         </div>
     </div>
@@ -25,7 +24,10 @@ const Skills = () => {
         {
             title: "Core Development",
             icon: <FaCode className="text-primary" />,
-            color: "primary",
+            colorClass: "bg-primary",
+            borderClass: "border-primary",
+            hoverBorderClass: "hover:border-primary/80",
+            fromClass: "from-primary/30",
             skills: [
                 { name: "HTML5 & Semantics", p: 98 },
                 { name: "Tailwind, Bootstrap & SCSS", p: 95 },
@@ -35,7 +37,10 @@ const Skills = () => {
         {
             title: "Frameworks & APIs",
             icon: <FaGem className="text-secondary" />,
-            color: "secondary",
+            colorClass: "bg-secondary",
+            borderClass: "border-secondary",
+            hoverBorderClass: "hover:border-secondary/80",
+            fromClass: "from-secondary/30",
             skills: [
                 { name: "React.js", p: 90 },
                 { name: "Angular", p: 85 },
@@ -45,7 +50,10 @@ const Skills = () => {
         {
             title: "Tooling & DevOps",
             icon: <FaWrench className="text-emerald-500" />,
-            color: "emerald-500", // Will use a custom arbitrary class or safe color
+            colorClass: "bg-emerald-500",
+            borderClass: "border-emerald-500",
+            hoverBorderClass: "hover:border-emerald-500/80",
+            fromClass: "from-emerald-500/30",
             skills: [
                 { name: "Git / GitHub", p: 95 },
                 { name: "VS Code / Vite", p: 85 },
@@ -68,7 +76,7 @@ const Skills = () => {
                     <h2 className="text-4xl md:text-5xl font-extrabold text-base-content mb-4 tracking-tight">Technical Skills <span className="text-primary animate-pulse inline-block">💡</span></h2>
                     <div className="h-1.5 w-24 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full shadow-lg"></div>
                 </motion.div>
-
+                
                 <div className="grid md:grid-cols-3 gap-8 text-left">
                     {skillCategories.map((category, idx) => (
                         <motion.div
@@ -79,8 +87,8 @@ const Skills = () => {
                             transition={{ duration: 0.5, delay: idx * 0.2 }}
                             className="relative group cursor-default"
                         >
-                            <div className={`absolute -inset-0.5 bg-gradient-to-br from-${category.color}/30 to-base-300 rounded-3xl blur-md opacity-0 group-hover:opacity-100 transition duration-500`}></div>
-                            <div className={`relative bg-base-100/90 backdrop-blur-xl p-10 rounded-3xl shadow-xl border-t-4 border-${category.color} hover:border-${category.color}/80 hover:shadow-[0_20px_50px_rgba(8,_112,_184,_0.1)] transition-all duration-500 h-full`}>
+                            <div className={`absolute -inset-0.5 bg-gradient-to-br ${category.fromClass} to-base-300 rounded-3xl blur-md opacity-0 group-hover:opacity-100 transition duration-500`}></div>
+                            <div className={`relative bg-base-100/90 backdrop-blur-xl p-10 rounded-3xl shadow-xl border-t-4 ${category.borderClass} ${category.hoverBorderClass} hover:shadow-[0_20px_50px_rgba(0,163,137,0.1)] transition-all duration-500 h-full`}>
                                 <h3 className="text-2xl font-black flex items-center gap-4 mb-10 text-base-content tracking-wide">
                                     <span className="p-4 bg-base-200/80 rounded-2xl shadow-inner border border-base-300/50">{category.icon}</span>
                                     {category.title}
@@ -92,7 +100,7 @@ const Skills = () => {
                                             key={sIdx}
                                             name={skill.name}
                                             percentage={skill.p}
-                                            color={category.color}
+                                            colorClass={category.colorClass}
                                         />
                                     ))}
                                 </div>

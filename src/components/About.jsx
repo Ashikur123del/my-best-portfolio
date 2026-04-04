@@ -1,6 +1,5 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { FaReact, FaAngular, FaJs, FaGithub, FaBootstrap, FaServer } from 'react-icons/fa';
+import { FaReact, FaAngular, FaJs, FaBootstrap, FaServer } from 'react-icons/fa';
 import { SiTailwindcss, SiSass } from 'react-icons/si';
 import ashikImg from '../assets/image/Ashik.jpeg';
 
@@ -47,7 +46,7 @@ const About = () => {
                     >
                         <div className="p-6 bg-base-200/50 rounded-2xl border-l-4 border-primary shadow-sm hover:shadow-md transition-shadow">
                             <p className="text-xl leading-relaxed text-base-content/80">
-                                I'm a dedicated <strong className="text-primary">Front-End Developer</strong> with <strong className="text-primary">1 Year</strong> of professional experience, specializing in building modern, scalable, and highly responsive web applications. My focus is on delivering exceptional user experiences through clean, performant code.
+                                I&apos;m a dedicated <strong className="text-primary">Front-End Developer</strong> with <strong className="text-primary">1 Year</strong> of professional experience, specializing in building modern, scalable, and highly responsive web applications. My focus is on delivering exceptional user experiences through clean, performant code.
                             </p>
                         </div>
 

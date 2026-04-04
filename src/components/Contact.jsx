@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaTwitter, FaPaperPlane } from 'react-icons/fa';
 
@@ -18,7 +17,7 @@ const Contact = () => {
                 >
                     <h2 className="text-4xl md:text-5xl font-extrabold text-base-content mb-4">Get In Touch <span className="text-primary">👋</span></h2>
                     <div className="h-1 w-24 bg-primary mx-auto rounded-full mb-6"></div>
-                    <p className="text-lg text-base-content/70">Have a question or want to work together? Leave your details and I'll get back to you.</p>
+                    <p className="text-lg text-base-content/70">Have a question or want to work together? Leave your details and I&apos;ll get back to you.</p>
                 </motion.div>
 
                 <motion.div

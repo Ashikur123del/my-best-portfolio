@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { FaLaptopCode, FaRocket, FaUserCheck, FaLayerGroup } from 'react-icons/fa';
 
@@ -47,7 +46,7 @@ const WhatIDo = () => {
                         What I Bring To The Table <span className="text-primary inline-block">🚀</span>
                     </h2>
                     <p className="text-lg text-base-content/70 max-w-2xl mx-auto mb-6">
-                        Beyond just writing code, I focus on engineering seamless experiences. Here's how I add value to your company and your users.
+                        Beyond just writing code, I focus on engineering seamless experiences. Here&apos;s how I add value to your company and your users.
                     </p>
                     <div className="h-1.5 w-24 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full shadow-lg"></div>
                 </motion.div>

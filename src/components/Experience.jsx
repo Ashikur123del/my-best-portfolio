@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { FaBriefcase, FaCheckCircle, FaLaptopCode } from 'react-icons/fa';
 

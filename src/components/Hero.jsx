@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { FaArrowRight, FaDownload, FaReact, FaAngular, FaBootstrap, FaJs } from 'react-icons/fa';
 import { SiTailwindcss, SiSass } from 'react-icons/si';
@@ -62,7 +61,7 @@ const Hero = () => {
                         Available for new opportunities
                     </span>
                     <h1 className="text-6xl md:text-8xl font-black mb-6 text-base-content tracking-tight">
-                        Hi, I'm <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">Md. Ashik</span>
+                        Hi, I&apos;m <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">Md. Ashik</span>
                     </h1>
                 </motion.div>
 
