@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
-import { FaReact, FaAngular, FaJs, FaBootstrap, FaServer } from 'react-icons/fa';
-import { SiTailwindcss, SiSass } from 'react-icons/si';
+import { FaReact, FaAngular, FaBootstrap, FaServer } from 'react-icons/fa';
+import { SiTailwindcss, SiSass, SiTypescript } from 'react-icons/si';
 import ashikImg from '../assets/image/Ashik.jpeg';
 
 const About = () => {
@@ -77,7 +77,7 @@ const About = () => {
                                 {[
                                     { name: 'React', icon: <FaReact /> },
                                     { name: 'Angular', icon: <FaAngular /> },
-                                    { name: 'TypeScript', icon: <FaJs /> }, // FaJs used as TS fallback here or just text
+                                    { name: 'TypeScript', icon: <SiTypescript className="text-secondary" /> },
                                     { name: 'TailwindCSS', icon: <SiTailwindcss /> },
                                     { name: 'Bootstrap', icon: <FaBootstrap /> },
                                     { name: 'SCSS', icon: <SiSass /> },

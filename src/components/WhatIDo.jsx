@@ -7,25 +7,25 @@ const WhatIDo = () => {
             title: "Modern UI Architecture",
             desc: "I build robust, scalable frontend architectures using React.js and Angular, ensuring code is modular, reusable, and easy to maintain throughout the project lifecycle.",
             icon: <FaLayerGroup />,
-            color: "primary"
+            colorClass: "text-primary"
         },
         {
             title: "Pixel-Perfect Designs",
             desc: "Using Tailwind CSS, Bootstrap, and SCSS, I magically transform Figma or XD designs into responsive, beautiful web pages that look stunning on any device.",
             icon: <FaLaptopCode />,
-            color: "secondary"
+            colorClass: "text-secondary"
         },
         {
             title: "Seamless API Integration",
             desc: "I bridge the gap between frontend and backend by elegantly consuming REST APIs, securely managing data fetching, and handling complex application states.",
             icon: <FaRocket />,
-            color: "emerald-500"
+            colorClass: "text-emerald-500"
         },
         {
             title: "Performance & UX Focused",
             desc: "A great app isn't just about looks. I optimize load times, ensure accessibility (A11y), and integrate micro-animations for an unforgettable user experience.",
             icon: <FaUserCheck />,
-            color: "purple-500"
+            colorClass: "text-purple-500"
         }
     ];
 
@@ -64,7 +64,7 @@ const WhatIDo = () => {
                             <div className="absolute -inset-0.5 bg-gradient-to-br from-primary/20 via-base-100 to-secondary/20 rounded-3xl blur-md opacity-0 group-hover:opacity-100 transition duration-700"></div>
 
                             <div className="relative bg-base-100/90 backdrop-blur-xl p-10 rounded-3xl shadow-xl border border-base-200 hover:border-primary/30 transition-all duration-500 h-full flex flex-col md:flex-row gap-8 items-start">
-                                <div className={`flex-shrink-0 w-20 h-20 rounded-2xl bg-base-200 flex items-center justify-center text-4xl text-${service.color} shadow-inner group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 border border-base-300`}>
+                                <div className={`flex-shrink-0 w-20 h-20 rounded-2xl bg-base-200 flex items-center justify-center text-4xl ${service.colorClass} shadow-inner group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 border border-base-300`}>
                                     {service.icon}
                                 </div>
                                 <div className="flex-1">

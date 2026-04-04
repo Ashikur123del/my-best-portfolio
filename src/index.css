@@ -6,4 +6,20 @@
   .tech-pill {
     @apply badge badge-outline badge-primary;
   }
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-xl border border-white/20 shadow-xl;
+  }
+  .dark .glass-card {
+    @apply bg-gray-900/70 backdrop-blur-xl border border-gray-100/10 shadow-xl;
+  }
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient-move 5s ease infinite;
+  }
+}
+
+@keyframes gradient-move {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
