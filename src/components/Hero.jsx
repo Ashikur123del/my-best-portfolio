@@ -28,7 +28,7 @@ const Hero = () => {
                     </motion.span>
 
                     <h1 className="text-6xl md:text-[5rem] font-black leading-[1.1] mb-8 tracking-tighter">
-                        Designing the <br /> <span className="text-gradient">Future in Front-End</span>
+                        <span className="text-gradient">Front-End Web Developer</span>
                     </h1>
 
                     <p className="text-xl text-slate-400 max-w-xl mb-12 font-medium leading-relaxed">
