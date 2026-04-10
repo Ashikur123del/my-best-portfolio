@@ -1,109 +1,84 @@
 import { motion } from 'framer-motion';
-import { FaCode, FaGem, FaWrench } from 'react-icons/fa';
-
-const SkillBar = ({ name, percentage, colorClass }) => (
-    <div className="mb-6">
-        <div className="flex justify-between mb-2">
-            <span className="font-bold text-base-content/80">{name}</span>
-            <span className="text-sm font-semibold opacity-70">{percentage}%</span>
-        </div>
-        <div className="h-2.5 w-full bg-base-300 rounded-full overflow-hidden">
-            <motion.div
-                initial={{ width: 0 }}
-                whileInView={{ width: `${percentage}%` }}
-                viewport={{ once: true }}
-                transition={{ duration: 1.5, ease: "easeOut" }}
-                className={`h-full rounded-full ${colorClass}`}
-            />
-        </div>
-    </div>
-);
+import { SiReact, SiAngular, SiJavascript, SiTypescript, SiTailwindcss, SiSass, SiFramer, SiVite } from 'react-icons/si';
 
 const Skills = () => {
-    const skillCategories = [
+    const categories = [
         {
-            title: "Core Development",
-            icon: <FaCode className="text-primary" />,
-            colorClass: "bg-primary",
-            borderClass: "border-primary",
-            hoverBorderClass: "hover:border-primary/80",
-            fromClass: "from-primary/30",
+            title: 'Frontend Library',
             skills: [
-                { name: "HTML5 & Semantics", p: 98 },
-                { name: "Tailwind, Bootstrap & SCSS", p: 95 },
-                { name: "JavaScript & TypeScript", p: 90 },
+                { name: 'React.js', icon: <SiReact className="text-[#61DAFB]" />, p: 95 },
+                { name: 'Angular', icon: <SiAngular className="text-[#DD0031]" />, p: 85 },
             ]
         },
         {
-            title: "Frameworks & APIs",
-            icon: <FaGem className="text-secondary" />,
-            colorClass: "bg-secondary",
-            borderClass: "border-secondary",
-            hoverBorderClass: "hover:border-secondary/80",
-            fromClass: "from-secondary/30",
+            title: 'Styling & Motion',
             skills: [
-                { name: "React.js", p: 90 },
-                { name: "Angular", p: 85 },
-                { name: "REST API Integration", p: 95 },
+                { name: 'Tailwind CSS', icon: <SiTailwindcss className="text-[#38B2AC]" />, p: 98 },
+                { name: 'Sass / SCSS', icon: <SiSass className="text-[#CC6699]" />, p: 90 },
+                { name: 'Framer Motion', icon: <SiFramer className="text-white" />, p: 88 },
             ]
         },
         {
-            title: "Tooling & DevOps",
-            icon: <FaWrench className="text-emerald-500" />,
-            colorClass: "bg-emerald-500",
-            borderClass: "border-emerald-500",
-            hoverBorderClass: "hover:border-emerald-500/80",
-            fromClass: "from-emerald-500/30",
+            title: 'Languages & Tools',
             skills: [
-                { name: "Git / GitHub", p: 95 },
-                { name: "VS Code / Vite", p: 85 },
-                { name: "Redux / State Management", p: 80 },
+                { name: 'JavaScript', icon: <SiJavascript className="text-[#F7DF1E]" />, p: 92 },
+                { name: 'TypeScript', icon: <SiTypescript className="text-[#3178C6]" />, p: 85 },
+                { name: 'Vite / Tooling', icon: <SiVite className="text-[#646CFF]" />, p: 90 },
             ]
         }
     ];
 
     return (
-        <section id="skills" className="py-24 bg-base-200/40 relative overflow-hidden">
-            <div className="absolute -top-40 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-3xl -z-10 pointer-events-none"></div>
-            <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
+        <section id="skills" className="py-32 bg-slate-950 px-6 overflow-hidden">
+            <div className="max-w-7xl mx-auto">
+                <div className="text-center mb-24">
+                  <motion.h2
+                    initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="text-center mb-20"
-                >
-                    <h2 className="text-4xl md:text-5xl font-extrabold text-base-content mb-4 tracking-tight">Technical Skills <span className="text-primary animate-pulse inline-block">💡</span></h2>
-                    <div className="h-1.5 w-24 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full shadow-lg"></div>
-                </motion.div>
-                
-                <div className="grid md:grid-cols-3 gap-8 text-left">
-                    {skillCategories.map((category, idx) => (
+                    className="text-5xl font-black mb-6 tracking-tighter"
+                  >
+                    Tech <span className="text-gradient">Stack & Mastery</span>
+                  </motion.h2>
+                  <p className="text-slate-400 font-medium max-w-xl mx-auto">Modern tools I use to build scalable and high-performance user interfaces.</p>
+                </div>
+
+                <div className="grid lg:grid-cols-3 gap-10">
+                    {categories.map((cat, idx) => (
                         <motion.div
                             key={idx}
-                            initial={{ opacity: 0, scale: 0.95, y: 20 }}
-                            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: idx * 0.2 }}
-                            className="relative group cursor-default"
+                            transition={{ delay: idx * 0.2 }}
+                            className="glass-card p-10 relative overflow-hidden"
                         >
-                            <div className={`absolute -inset-0.5 bg-gradient-to-br ${category.fromClass} to-base-300 rounded-3xl blur-md opacity-0 group-hover:opacity-100 transition duration-500`}></div>
-                            <div className={`relative bg-base-100/90 backdrop-blur-xl p-10 rounded-3xl shadow-xl border-t-4 ${category.borderClass} ${category.hoverBorderClass} hover:shadow-[0_20px_50px_rgba(0,163,137,0.1)] transition-all duration-500 h-full`}>
-                                <h3 className="text-2xl font-black flex items-center gap-4 mb-10 text-base-content tracking-wide">
-                                    <span className="p-4 bg-base-200/80 rounded-2xl shadow-inner border border-base-300/50">{category.icon}</span>
-                                    {category.title}
-                                </h3>
-
-                                <div className="space-y-8">
-                                    {category.skills.map((skill, sIdx) => (
-                                        <SkillBar
-                                            key={sIdx}
-                                            name={skill.name}
-                                            percentage={skill.p}
-                                            colorClass={category.colorClass}
-                                        />
-                                    ))}
-                                </div>
+                            <div className="absolute top-0 right-0 p-8 text-6xl font-black text-white/5 select-none tracking-tighter uppercase">{cat.title.split(' ')[0]}</div>
+                            <h3 className="text-2xl font-bold mb-12 text-white/90 underline decoration-cyan-500/30 underline-offset-[12px] decoration-2">{cat.title}</h3>
+                            
+                            <div className="flex flex-col gap-10">
+                                {cat.skills.map((skill, sIdx) => (
+                                    <div key={sIdx} className="group flex flex-col gap-4">
+                                        <div className="flex items-center justify-between">
+                                            <div className="flex items-center gap-4">
+                                                <div className="text-3xl p-3 bg-slate-800/80 rounded-2xl group-hover:rotate-12 group-hover:scale-110 transition-transform shadow-xl border border-white/5">{skill.icon}</div>
+                                                <span className="text-lg font-bold text-slate-300 group-hover:text-white transition-colors">{skill.name}</span>
+                                            </div>
+                                            <span className="text-sm font-black text-cyan-400/80">{skill.p}%</span>
+                                        </div>
+                                        <div className="h-2 w-full bg-slate-800/50 rounded-full overflow-hidden border border-white/5">
+                                            <motion.div
+                                                initial={{ width: 0 }}
+                                                whileInView={{ width: `${skill.p}%` }}
+                                                viewport={{ once: true }}
+                                                transition={{ duration: 1.5, delay: 0.5 }}
+                                                className="h-full bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full relative"
+                                            >
+                                                <div className="absolute top-0 right-0 w-2 h-full bg-white animate-pulse"></div>
+                                            </motion.div>
+                                        </div>
+                                    </div>
+                                ))}
                             </div>
                         </motion.div>
                     ))}

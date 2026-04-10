@@ -1,77 +1,89 @@
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaTwitter, FaPaperPlane } from 'react-icons/fa';
+import { FiSend, FiMail, FiMapPin } from 'react-icons/fi';
 
 const Contact = () => {
     return (
-        <section id="contact" className="py-24 bg-base-100 relative overflow-hidden">
-            <div className="absolute top-0 right-0 -mr-40 -mt-40 w-96 h-96 bg-primary rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
-            <div className="absolute bottom-0 left-0 -ml-40 -mb-40 w-96 h-96 bg-secondary rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+        <section id="contact" className="py-32 bg-slate-950 px-6 relative overflow-hidden">
+            <div className="absolute top-1/4 right-[5%] w-[400px] h-[400px] bg-cyan-500/10 rounded-full blur-[100px] animate-blob -z-10"></div>
+            <div className="absolute bottom-1/4 left-[5%] w-[400px] h-[400px] bg-purple-600/10 rounded-full blur-[100px] animate-blob animation-delay-2000 -z-10"></div>
 
-            <div className="max-w-4xl mx-auto px-6 relative z-10">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                    className="text-center mb-16"
-                >
-                    <h2 className="text-4xl md:text-5xl font-extrabold text-base-content mb-4">Get In Touch <span className="text-primary">👋</span></h2>
-                    <div className="h-1 w-24 bg-primary mx-auto rounded-full mb-6"></div>
-                    <p className="text-lg text-base-content/70">Have a question or want to work together? Leave your details and I&apos;ll get back to you.</p>
-                </motion.div>
+            <div className="max-w-7xl mx-auto">
+                <div className="grid lg:grid-cols-2 gap-20 items-center">
+                    <motion.div
+                        initial={{ opacity: 0, x: -50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                        className="text-left"
+                    >
+                        <span className="text-cyan-400 font-bold uppercase tracking-[0.3em] text-sm mb-6 block underline decoration-cyan-500/50 underline-offset-8 decoration-4">Get In Touch</span>
+                        <h2 className="text-5xl md:text-6xl font-black mb-8 leading-tight tracking-tighter uppercase underline decoration-cyan-500/30 underline-offset-[12px] decoration-4">Let&apos;s Build <span className="text-gradient">Something Rare</span> Together <span className="text-cyan-500">.</span></h2>
+                        <p className="text-slate-400 text-lg leading-relaxed mb-12 max-w-lg font-medium">I&apos;m currently open to new opportunities and interesting freelance projects. Reach out if you want to collaborate.</p>
 
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                >
-                    <form className="bg-base-100/50 backdrop-blur-md shadow-2xl rounded-3xl p-8 md:p-12 border border-base-200">
-                        <div className="grid md:grid-cols-2 gap-6 mb-6">
-                            <div className="form-control">
-                                <label className="label"><span className="label-text font-semibold">Your Name</span></label>
-                                <input type="text" placeholder="John Doe" className="input input-bordered input-primary w-full bg-base-100 focus:bg-white transition-colors" required />
-                            </div>
-                            <div className="form-control">
-                                <label className="label"><span className="label-text font-semibold">Your Email</span></label>
-                                <input type="email" placeholder="john@example.com" className="input input-bordered input-primary w-full bg-base-100 focus:bg-white transition-colors" required />
-                            </div>
+                        <div className="flex flex-col gap-8">
+                            {[
+                                { icon: <FiMail />, label: 'Email Me', value: 'ashikur760@gmail.com', link: 'mailto:ashikur760@gmail.com' },
+                                { icon: <FiMapPin />, label: 'Location', value: 'Dhaka, Bangladesh', link: '#' },
+                            ].map((item, idx) => (
+                                <a
+                                    key={idx}
+                                    href={item.link}
+                                    className="group flex items-center gap-6 p-6 glass-card border-slate-700/50 hover:bg-slate-900 transition-all duration-300 w-fit"
+                                >
+                                    <div className="w-14 h-14 bg-slate-800/80 rounded-2xl flex items-center justify-center text-2xl text-cyan-400 group-hover:scale-110 group-hover:rotate-6 transition-transform shadow-xl border border-white/5">{item.icon}</div>
+                                    <div className="flex flex-col">
+                                        <span className="text-xs font-bold text-slate-500 tracking-widest uppercase">{item.label}</span>
+                                        <span className="text-xl font-bold text-white tracking-tight">{item.value}</span>
+                                    </div>
+                                </a>
+                            ))}
                         </div>
+                    </motion.div>
 
-                        <div className="form-control mb-8">
-                            <label className="label"><span className="label-text font-semibold">Your Message</span></label>
-                            <textarea placeholder="Tell me about your project..." className="textarea textarea-bordered textarea-primary h-32 w-full bg-base-100 focus:bg-white transition-colors text-base" required></textarea>
-                        </div>
+                    <motion.div
+                        initial={{ opacity: 0, x: 50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                    >
+                        <form className="glass-card p-10 md:p-16 border-white/5 bg-slate-900/80 backdrop-blur-3xl shadow-2xl overflow-hidden relative">
+                            {/* Form Header Accent */}
+                            <div className="absolute top-0 left-0 w-full h-[6px] bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600"></div>
+                            
+                            <div className="grid md:grid-cols-2 gap-8 mb-8">
+                                <div className="space-y-4">
+                                    <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Your Full Name</label>
+                                    <input
+                                        type="text"
+                                        placeholder="Md. Ashik"
+                                        className="w-full bg-slate-950/50 border border-slate-800 p-4 rounded-2xl focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50 transition-all text-white placeholder:text-slate-700"
+                                    />
+                                </div>
+                                <div className="space-y-4">
+                                    <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Your Email</label>
+                                    <input
+                                        type="email"
+                                        placeholder="ashikur@example.com"
+                                        className="w-full bg-slate-950/50 border border-slate-800 p-4 rounded-2xl focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50 transition-all text-white placeholder:text-slate-700"
+                                    />
+                                </div>
+                            </div>
 
-                        <button type="submit" className="btn btn-primary w-full rounded-2xl h-14 text-lg font-bold shadow-lg shadow-primary/30 hover:-translate-y-1 transition-transform group">
-                            Send Message <FaPaperPlane className="ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                        </button>
-                    </form>
-                </motion.div>
+                            <div className="space-y-4 mb-10">
+                                <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Your Project Detail</label>
+                                <textarea
+                                    placeholder="Tell me about your amazing vision..."
+                                    rows="5"
+                                    className="w-full bg-slate-950/50 border border-slate-800 p-4 rounded-2xl focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50 transition-all text-white placeholder:text-slate-700 resize-none"
+                                ></textarea>
+                            </div>
 
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: 0.4 }}
-                    className="flex justify-center space-x-8 mt-16"
-                >
-                    {[
-                        { icon: <FaGithub />, link: "https://github.com/Ashikur123del" },
-                        { icon: <FaLinkedin />, link: "https://www.linkedin.com/in/asik-khan-b82390249/" },
-                        { icon: <FaTwitter />, link: "#" }
-                    ].map((social, idx) => (
-                        <a
-                            key={idx}
-                            href={social.link}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="text-4xl text-base-content/50 hover:text-primary transform hover:-translate-y-2 hover:scale-110 transition-all duration-300 drop-shadow-md hover:drop-shadow-xl"
-                        >
-                            {social.icon}
-                        </a>
-                    ))}
-                </motion.div>
+                            <button className="btn-premium w-full group flex items-center justify-center gap-4 py-5 uppercase tracking-widest text-lg font-black bg-gradient-to-br from-cyan-500 via-blue-600 to-purple-600 shadow-cyan-500/20 hover:shadow-cyan-500/40">
+                                Send Message <FiSend className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                            </button>
+                        </form>
+                    </motion.div>
+                </div>
             </div>
         </section>
     );

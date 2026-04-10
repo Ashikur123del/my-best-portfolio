@@ -1,96 +1,78 @@
 import { motion } from 'framer-motion';
-import { FaReact, FaAngular, FaBootstrap, FaServer } from 'react-icons/fa';
-import { SiTailwindcss, SiSass, SiTypescript } from 'react-icons/si';
-import ashikImg from '../assets/image/Ashik.jpeg';
+import { FiTarget, FiBox, FiLayers } from 'react-icons/fi';
 
 const About = () => {
+    const stats = [
+        { label: 'Projects Completed', value: '15+', icon: <FiBox className="text-cyan-400" /> },
+        { label: 'Satisfied Clients', value: '10+', icon: <FiTarget className="text-purple-500" /> },
+        { label: 'Core Skills', value: '12+', icon: <FiLayers className="text-emerald-500" /> },
+    ];
+
     return (
-        <section id="about" className="py-24 bg-base-100">
-            <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <section id="about" className="py-32 bg-slate-950/50 relative overflow-hidden px-6">
+            <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, x: -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                    className="text-center mb-16"
+                    transition={{ duration: 0.8 }}
+                    className="flex flex-col gap-12"
                 >
-                    <h2 className="text-4xl md:text-5xl font-extrabold text-base-content mb-4">About Me <span className="text-primary">🎯</span></h2>
-                    <div className="h-1 w-24 bg-primary mx-auto rounded-full"></div>
+                    <div>
+                        <span className="text-cyan-400 font-bold uppercase tracking-[0.3em] text-sm mb-4 block underline decoration-cyan-500/50 underline-offset-8 decoration-4">The Developer</span>
+                        <h2 className="text-5xl font-black mb-8 leading-tight">I bridge the gap between design and development <span className="text-cyan-500">.</span></h2>
+                        <p className="text-slate-400 text-lg leading-relaxed mb-8 max-w-lg">
+                            With a passion for building professional, scalable, and highly performant front-end systems, I focus on crafting experiences that are both beautiful and technically robust.
+                        </p>
+                        <p className="text-slate-500 text-lg leading-relaxed italic max-w-lg">
+                            &ldquo;Innovation isn&apos;t just about code &mdash; it&apos;s about making complex problems feel simple for the end user.&rdquo;
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                        {stats.map((stat, idx) => (
+                            <motion.div
+                                key={idx}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.2 + idx * 0.1 }}
+                                className="glass-card p-6 border-slate-700/50 group hover:-translate-y-2 transition-all duration-300"
+                            >
+                                <div className="p-3 bg-slate-800/80 rounded-2xl w-fit mb-4 group-hover:scale-110 transition-transform">{stat.icon}</div>
+                                <div className="text-4xl font-black text-white mb-1 group-hover:text-cyan-400 transition-colors uppercase tracking-tight">{stat.value}</div>
+                                <div className="text-xs font-bold text-slate-500 uppercase tracking-widest">{stat.label}</div>
+                            </motion.div>
+                        ))}
+                    </div>
                 </motion.div>
 
-                <div className="flex flex-col md:flex-row items-center gap-16">
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
-                        className="md:w-1/3 w-full max-w-sm"
-                    >
-                        <div className="relative group perspective">
-                            <div className="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-3xl blur opacity-25 group-hover:opacity-60 transition duration-1000 group-hover:duration-200"></div>
-                            <img
-                                src={ashikImg}
-                                alt="Md. Ashik"
-                                className="relative rounded-3xl shadow-2xl object-cover w-full h-auto aspect-square border-4 border-base-100 transform transition duration-500 hover:scale-[1.02]"
-                                onError={(e) => { e.target.src = 'https://ui-avatars.com/api/?name=Md+Ashik&background=00A389&color=fff&size=512'; }}
-                            />
-                        </div>
-                    </motion.div>
+                <motion.div
+                    initial={{ opacity: 0, x: 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8 }}
+                    className="relative flex justify-center lg:justify-end order-first lg:order-last"
+                >
+                    <div className="relative group perspective w-full max-w-md aspect-square bg-slate-900 overflow-hidden rounded-[3rem] border border-white/5 shadow-2xl transition-all duration-700 hover:rotate-3">
+                        <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/10 via-transparent to-purple-600/10 opacity-40 group-hover:opacity-100 transition-opacity"></div>
+                        
+                        <div className="p-12 h-full flex flex-col justify-between">
+                            <div className="flex justify-between items-start">
+                                <div className="flex flex-col">
+                                    <span className="text-6xl font-black text-cyan-400 opacity-20 select-none tracking-tighter">ASHIK</span>
+                                    <span className="text-6xl font-black text-slate-700 opacity-10 select-none ml-10 -mt-8 tracking-tighter">CORE</span>
+                                </div>
+                                <div className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center text-white/40 font-bold border border-white/10 uppercase text-xs">2024</div>
+                            </div>
 
-                    <motion.div
-                        initial={{ opacity: 0, x: 20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                        className="md:w-2/3 space-y-6"
-                    >
-                        <div className="p-6 bg-base-200/50 rounded-2xl border-l-4 border-primary shadow-sm hover:shadow-md transition-shadow">
-                            <p className="text-xl leading-relaxed text-base-content/80">
-                                I&apos;m a dedicated <strong className="text-primary">Front-End Developer</strong> with <strong className="text-primary">1 Year</strong> of professional experience, specializing in building modern, scalable, and highly responsive web applications. My focus is on delivering exceptional user experiences through clean, performant code.
-                            </p>
-                        </div>
-
-                        <ul className="space-y-4 text-lg text-base-content/70">
-                            <li className="flex items-start">
-                                <span className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-4 mt-1">
-                                    ✨
-                                </span>
-                                <span><strong>Specialization:</strong> React.js, Angular, TypeScript, and creating robust, responsive applications using Tailwind CSS and Bootstrap.</span>
-                            </li>
-                            <li className="flex items-start">
-                                <span className="flex-shrink-0 w-8 h-8 rounded-full bg-secondary/10 flex items-center justify-center text-secondary mr-4 mt-1">
-                                    🚀
-                                </span>
-                                <span><strong>Goal:</strong> To solve UI/UX challenges, master modern frontend architectures, and build performant applications using SCSS and modern JS.</span>
-                            </li>
-                            <li className="flex items-start">
-                                <span className="flex-shrink-0 w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500 mr-4 mt-1">
-                                    🔌
-                                </span>
-                                <span><strong>Impact:</strong> Seamless integration of <strong>REST APIs</strong> to create dynamic and interactive data-driven user experiences.</span>
-                            </li>
-                        </ul>
-
-                        <div className="pt-8 border-t border-base-300">
-                            <h3 className="font-bold text-2xl mb-4">Core Technologies</h3>
-                            <div className="flex flex-wrap gap-3">
-                                {[
-                                    { name: 'React', icon: <FaReact /> },
-                                    { name: 'Angular', icon: <FaAngular /> },
-                                    { name: 'TypeScript', icon: <SiTypescript className="text-secondary" /> },
-                                    { name: 'TailwindCSS', icon: <SiTailwindcss /> },
-                                    { name: 'Bootstrap', icon: <FaBootstrap /> },
-                                    { name: 'SCSS', icon: <SiSass /> },
-                                    { name: 'REST API', icon: <FaServer /> },
-                                ].map((tech) => (
-                                    <span key={tech.name} className="flex items-center gap-2 px-4 py-2 bg-base-200 rounded-full text-sm font-semibold text-base-content shadow-sm border border-base-300 hover:border-primary transition-colors cursor-default">
-                                        {tech.icon} {tech.name}
-                                    </span>
-                                ))}
+                            <div className="space-y-4">
+                                <span className="p-2 border border-slate-700 rounded-full text-xs font-bold tracking-widest text-slate-500 block w-fit">CORE MISSIONS</span>
+                                <h3 className="text-3xl font-black text-white leading-tight uppercase tracking-tight">Scalable Systems & <br /> Pixel Perfection</h3>
                             </div>
                         </div>
-                    </motion.div>
-                </div>
+                    </div>
+                </motion.div>
             </div>
         </section>
     );
