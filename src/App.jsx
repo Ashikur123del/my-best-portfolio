@@ -5,12 +5,13 @@ import WhatIDo from './components/WhatIDo';
 import Experience from './components/Experience';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
+import Education from './components/Education';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 /**
- * Fresh React Portfolio Project
- * Built with: Vite 6, Tailwind 3, Framer Motion, React Icons
+ * MD. ASHIK KHAN - Portfolio
+ * Built with: React 18, Vite 6, Tailwind CSS 3, Framer Motion, React Icons
  */
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Experience />
         <Skills />
         <Projects />
+        <Education />
         <Contact />
       </main>
       <Footer />
